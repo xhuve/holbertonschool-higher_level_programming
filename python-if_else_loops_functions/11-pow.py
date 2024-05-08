@@ -10,5 +10,3 @@ def pow(a, b):
         for _ in range(b * -1):
             res = res / a
         return res
-
-print(pow(10, -2))

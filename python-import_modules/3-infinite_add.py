@@ -10,4 +10,3 @@ if __name__ == "__main__":
         sum += int(sys.argv[i])
 
     print(sum)
-    

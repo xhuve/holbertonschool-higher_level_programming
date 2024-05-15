@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 
 def roman_to_int(roman_string):
+    if not roman_string or not isinstance(roman_string, str):
+        return 0
+
     roman_symbols = {
         "I": 1,
         "V": 5,
@@ -12,7 +15,7 @@ def roman_to_int(roman_string):
     }
 
     total = 0
-    i = len(roman_string) -1 
+    i = len(roman_string) - 1
     while i >= 0:
         char = roman_string[i]
         prev = roman_string[i - 1]

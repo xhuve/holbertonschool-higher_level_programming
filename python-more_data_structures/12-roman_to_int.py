@@ -22,11 +22,11 @@ def roman_to_int(roman_string):
             total = total - roman_symbols[prev]
             i -= 1
         i -= 1
-    
+
     return total
 
-# roman_number = "X"
-# print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+roman_number = "X"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
 
 roman_number = "VII"
 print("{} = {}".format(roman_number, roman_to_int(roman_number)))

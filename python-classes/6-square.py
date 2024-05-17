@@ -23,7 +23,7 @@ class Square:
     def size(self, value):
         """Set the size of the square"""
         try:
-            if not isinstance(value, tuple) and isinstance(value[1], int):
+            if not isinstance(value, tuple) and not isinstance(value[1], int):
                 raise TypeError("size must be an integer""")
             elif value < 0:
                 raise ValueError("size must be >= 0")

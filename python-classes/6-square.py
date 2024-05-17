@@ -46,9 +46,9 @@ class Square:
         try:
             if not isinstance(value, tuple):
                 raise TypeError(string)
-            if not isinstance(value[0], int) or not isinstance(value[1], int):
-                raise TypeError(string)
             if len(value) != 2:
+                raise TypeError(string)
+            if not isinstance(value[0], int) or not isinstance(value[1], int):
                 raise TypeError(string)
             if value[0] < 0 or value[1] < 0:
                 raise TypeError(string)

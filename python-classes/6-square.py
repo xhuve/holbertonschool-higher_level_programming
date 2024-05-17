@@ -44,9 +44,7 @@ class Square:
         """Set the position of the square"""
         string = "position must be a tuple of 2 positive integers"
         try:
-            if not isinstance(value, tuple):
-                raise TypeError(string)
-            if len(value) != 2:
+            if not isinstance(value, tuple) or len(value) != 2:
                 raise TypeError(string)
             if not isinstance(value[0], int) or not isinstance(value[1], int):
                 raise TypeError(string)

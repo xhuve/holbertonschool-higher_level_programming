@@ -43,7 +43,7 @@ class Square:
 
     def my_print(self):
         """ Method to print a square consisting of #
-        
+
         Return:
             A square made of # with the width and height of the size property
         """

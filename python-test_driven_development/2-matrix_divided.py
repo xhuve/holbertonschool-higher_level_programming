@@ -19,7 +19,8 @@ def matrix_divided(matrix, div):
         raise TypeError(string)
     if not isinstance(matrix[0], list):
         raise TypeError(string)
-    if not all(isinstance(val, int) or isinstance(val, float) for row in matrix for val in row):
+    if not all(isinstance(val, int) or
+               isinstance(val, float) for row in matrix for val in row):
         raise TypeError(string)
     if len(matrix) > 1:
         if all((len(row) != len(matrix[0]) for row in matrix[1:])):

@@ -16,3 +16,7 @@
     >>> print_square("hello")
     Traceback (most recent call last):
     TypeError: size must be an integer
+
+    >>> print_square(2, 12)
+    Traceback (most recent call last):
+    TypeError: print_square() takes 1 positional argument but 2 were given

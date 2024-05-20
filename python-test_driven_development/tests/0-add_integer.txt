@@ -1,0 +1,12 @@
+Function to add two integers.
+    >>> add_integer = __import__('0-add_integer').add_integer
+    98
+    >>> add_integer(3, 5)
+    8
+
+    >>> add_integer(3, '5')  # Test when one of the arguments is a string
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+    >>> add_integer(3.5, 5)  # Test when one of the arguments is a float
+    8

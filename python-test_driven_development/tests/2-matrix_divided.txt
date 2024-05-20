@@ -5,7 +5,7 @@
 
     >>> matrix_divided([[1, 2, 'a'], [4, 5, 6]], 2)
     Traceback (most recent call last):
-    TypeError: Matrix must be a matrix (list of lists) of integers/floats
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
 
     >>> matrix_divided([[1, 2, 3], [4, 5]], 2)
     Traceback (most recent call last):
@@ -13,7 +13,7 @@
 
     >>> matrix_divided([1, 2, 3], 2)
     Traceback (most recent call last):
-    TypeError: Matrix must be a matrix (list of lists) of integers/floats
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
 
     >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 0)
     Traceback (most recent call last):

@@ -15,12 +15,10 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    new_text = text.split()
-    for word in new_text:
-        print(word, end="")
-        if word == new_text[-1]:
-            break
-        if '.' in word or ':' in word or '?' in word:
+    i = 0
+    while i < len(text):
+        print(text[i], end="")
+        if text[i] in ['.', ':', '?']:
             print()
-        else:
-            print("", end=" ")
+            i += 1
+        i += 1

@@ -20,7 +20,7 @@ def text_indentation(text):
         print(word, end="")
         if word == new_text[-1]:
             break
-        if '.' in word or ',' in word or '?' in word:
+        if '.' in word or ':' in word or '?' in word:
             print()
         else:
             print("", end=" ")

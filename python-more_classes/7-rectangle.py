@@ -49,9 +49,9 @@ class Rectangle:
         if self.height == 0 or self.width == 0:
             return image
         for _ in range(self.height - 1):
-            image += Rectangle.print_symbol * self.width
+            image += self.print_symbol * self.width
             image += "\n"
-        image += Rectangle.print_symbol * self.width
+        image += self.print_symbol * self.width
         return image
 
     def __repr__(self):

@@ -8,4 +8,5 @@ def is_same_class(obj, a_class):
         Return:
             What is would return
     """
-    return obj is a_class
+    obj_type = type(obj)
+    return obj_type == a_class

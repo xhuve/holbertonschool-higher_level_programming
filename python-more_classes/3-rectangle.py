@@ -45,7 +45,8 @@ class Rectangle:
         image = ""
         if self.height == 0 or self.width == 0:
             return image
-        for _ in range(self.height):
+        for _ in range(self.height - 1):
             image += "#" * self.width
             image += "\n"
+        image += "#" * self.width
         return image

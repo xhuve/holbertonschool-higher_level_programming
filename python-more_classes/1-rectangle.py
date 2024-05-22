@@ -1,18 +1,18 @@
 #!/usr/bin/python3
-"""Documentation"""
+"""Program that creates a rectangle class"""
 
 
 class Rectangle:
-    """ An empty rectangle class """
-    
-    def __init__(self, width=0, heigh=0):
+    """ A rectangle class """
+
+    def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
 
     @property
     def width(self):
         return self.__width
-    
+
     @width.setter
     def width(self, width):
         if not isinstance(width, int):
@@ -24,7 +24,7 @@ class Rectangle:
     @property
     def height(self):
         return self.__height
-    
+
     @height.setter
     def height(self, height):
         if not isinstance(height, int):

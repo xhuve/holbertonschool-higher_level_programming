@@ -3,10 +3,6 @@
 
 class MyList(list):
     """A list object, in essence a list"""
-    my_list = []
-
-    def __init__(self):
-        MyList.my_list.append(self)
 
 
     def print_sorted(self):
@@ -15,4 +11,6 @@ class MyList(list):
             Return:
                 List containing variables and attributes
         """
-        print(sorted(my_list))
+
+        sorted_list = sorted(self)
+        print(sorted_list)

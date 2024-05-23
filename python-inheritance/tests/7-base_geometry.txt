@@ -11,6 +11,7 @@
 
             >>> bg.integer_validator()
             Traceback (most recent call last):
+            ...
             TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
             >>> bg.integer_validator("side_length", -5)

@@ -8,8 +8,3 @@ class Square(Rectangle):
 
     def __init__(self, size):
         super().__init__(size, size)
-
-s = Square(13)
-
-print(s)
-print(s.area())

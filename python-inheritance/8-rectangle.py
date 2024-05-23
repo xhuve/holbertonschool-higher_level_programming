@@ -15,6 +15,7 @@ class BaseGeometry(object):
             raise ValueError(f"{name} must be greater than 0")
         return value
 
+
 class Rectangle(BaseGeometry):
     """A rectangle class inheriting from BaseGeometry"""
 

@@ -16,7 +16,8 @@ class BaseGeometry(object):
         return value
 
 class Rectangle(BaseGeometry):
-        
+    """A rectangle class inheriting from BaseGeometry"""
+
     def __init__(self, width, height):
         self.__width = self.integer_validator("width", width)
         self.__height = self.integer_validator("height", height)

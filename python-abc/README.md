@@ -1,0 +1,1 @@
+# Learning about abstract base classes in python. everything seems to be an object. very cool

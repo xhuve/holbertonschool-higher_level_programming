@@ -16,8 +16,8 @@ class VerboseList(list):
         super().remove(value)
         print(f"Removed [{value}] from the list.")    
 
-    def pop(self, index=None):
-        if index == None:
+    def pop(self, index=-1):
+        if index == -1:
             value = super().pop()
         else:
             value = super().pop(index)

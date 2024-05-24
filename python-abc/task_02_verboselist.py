@@ -6,19 +6,19 @@ class VerboseList(list):
 
     def append(self, value):
         super().append(value)
-        print(f"Added {value} to the list.")
+        print(f"Added [{value}] to the list.")
 
     def extend(self, list):
         super().extend(list)
-        print(f"Extended the list with {len(list)} items.")
+        print(f"Extended the list with [{len(list)}] items.")
 
     def remove(self, value):
         super().remove(value)
-        print(f"Removed {value} from the list.")    
+        print(f"Removed [{value}] from the list.")    
 
     def pop(self, index=None):
         if index == None:
             value = super().pop()
         else:
             value = super().pop(index)
-        print(f"Popped {value} from the list.")
+        print(f"Popped [{value}] from the list.")

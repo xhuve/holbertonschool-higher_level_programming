@@ -3,5 +3,6 @@
 
 
 def write_file(filename="", text=""):
+    """Write to a file"""
     with open(filename, "w") as f:
         f.write(text)

@@ -9,17 +9,11 @@ class Student():
         self.__age = age
 
     def to_json(self, attrs=None):
-        dictionary = {
-            "first_name": self.__first_name,
-            "last_name": self.__last_name,
-            "age": self.__age
-        }
-
         if attrs is None:
-            return dictionary
+            return self.__dict__
 
         wanted_dict = {}
         for attr in attrs:
-            if attr in dictionary:
-                wanted_dict[attr] = dictionary[attr]
+            if attr in self.__dict__:
+                wanted_dict[attr] = self.__dict__[attr]
         return wanted_dict

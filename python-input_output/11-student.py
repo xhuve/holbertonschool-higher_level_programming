@@ -10,9 +10,9 @@ class Student():
 
     def to_json(self, attrs=None):
         dictionary = {
-            "first_name": self.first_name,
-            "last_name": self.last_name,
-            "age": self.age
+            "first_name": self.__first_name,
+            "last_name": self.__last_name,
+            "age": self.__age
         }
 
         if attrs is None:
@@ -23,8 +23,11 @@ class Student():
             if attr in dictionary:
                 wanted_dict[attr] = dictionary[attr]
         return wanted_dict
-    
+
     def reload_from_json(self, json):
-        self.first_name = json['first_name']
-        self.last_name = json['last_name']
-        self.age = json.get("age")
+        if 'first_name' in json:
+            self.first_name = json['first_name']
+        if 'last_name' in json:
+            self.last_name = json['last_name']
+        if 'age' in json:
+            self.age = json['age']

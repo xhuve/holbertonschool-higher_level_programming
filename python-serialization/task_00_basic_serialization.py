@@ -2,9 +2,15 @@
 import json
 
 def serialize_and_save_to_file(data, filename):
-    with open(filename, "w") as f:
-        return json.dump(data, f)
+    try:
+        with open(filename, "w") as f:
+            return json.dump(data, f)
+    except Exception:
+        return None
 
 def load_and_deserialize(filename):
-    with open(filename, "r") as f:
-        return json.load(f)
+    try:
+        with open(filename, "r") as f:
+            return json.load(f)
+    except Exception:
+        return None

@@ -10,9 +10,9 @@ class Student():
 
     def to_json(self, attrs=None):
         dictionary = {
-            "first_name": self.__first_name,
-            "last_name": self.__last_name,
-            "age": self.__age
+            "first_name": self.first_name,
+            "last_name": self.last_name,
+            "age": self.age
         }
 
         if attrs is None:

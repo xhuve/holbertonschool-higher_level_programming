@@ -28,18 +28,17 @@ class MyHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             self.wfile.write(sentData.encode('utf-8'))
         elif self.path == '/status':
             self.send_response(200)
-            self.send_header('Content-type', 'application/json')
+            self.send_header('Content-type', 'text/plain')
             self.end_headers()
 
-            response_text = json.dumps({"status": "OK"})
-            self.wfile.write(response_text.encode('utf-8'))
+            self.wfile.write("OK".encode('utf-8'))
         else:
             self.send_response(404)
             self.send_header('Content-type', 'text/plain')
             self.end_headers()
 
             self.wfile.write("Site not found".encode('utf-8'))
-            
+
 
 httpd = http.server.HTTPServer(('', 8000), MyHTTPRequestHandler)
 print("starting server")

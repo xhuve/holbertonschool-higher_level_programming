@@ -5,7 +5,6 @@ app = Flask(__name__)
 
 users = {"jane": {"name": "Jane", "age": 28, "city": "Los Angeles"}}
 
-
 @app.route('/')
 def home():
     return "Welcome to Flask API!"
@@ -17,7 +16,7 @@ def JsonData():
 
 @app.route('/status')
 def ServerStatus():
-    return "Ok"
+    return "OK"
 
 @app.route('/users/<username>')
 def ReturnUser(username):

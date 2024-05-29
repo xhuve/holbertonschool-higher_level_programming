@@ -6,6 +6,7 @@ import csv
 def fetch_and_print_posts():
     res = requests.get("https://jsonplaceholder.typicode.com/posts")
     if res.status_code == 200:
+        print(res.status_code)
         jfile = res.json()
         for my_dict in jfile:
             print(my_dict)

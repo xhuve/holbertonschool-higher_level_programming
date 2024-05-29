@@ -37,7 +37,7 @@ class MyHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             self.send_header('Content-type', 'text/plain')
             self.end_headers()
 
-            self.wfile.write("Site not found".encode('utf-8'))
+            self.wfile.write("Endpoint not found".encode('utf-8'))
 
 
 httpd = http.server.HTTPServer(('', 8000), MyHTTPRequestHandler)

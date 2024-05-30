@@ -3,21 +3,22 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-users = {}
+users = {"jane": {"name": "Jane", "age": 28, "city": "Los Angeles"}}
 
-@app.route("/")
+@app.route('/')
 def home():
     return "Welcome to the Flask API!"
 
 @app.route('/data')
 def JsonData():
-    return jsonify(list(users.keys()))
+    all_keys = [key for key in users.keys()]
+    return jsonify(all_keys)
 
-@app.route("/status")
+@app.route('/status')
 def ServerStatus():
     return "OK"
 
-@app.route("/users/<username>")
+@app.route('/users/<username>')
 def ReturnUser(username):
     user = users.get(username)
     if user:

@@ -14,16 +14,16 @@ users = {
     "billy": {"username": "billy", "password": generate_password_hash("billijean"), "role": "admin"}
 }
 
+@auth.verify_password
+def verify_password(username, password):
+    user = users.get(username)
+    if user and check_password_hash(users[username].get("password"), password):
+        return username
+
 @app.route("/basic-protected")
 @auth.login_required
 def basicRoute():
-    print(auth.current_user())
     return {"msg": "Basic Auth: Access Granted"}
-
-@auth.verify_password
-def verify_password(username, password):
-    if username in users and check_password_hash(users[username].get("password"), password):
-        return username
 
 if __name__ == "__main__": 
     app.run()

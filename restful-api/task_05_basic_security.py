@@ -23,7 +23,7 @@ def verify_password(username, password):
 @app.route("/basic-protected")
 @auth.login_required
 def basicRoute():
-    return {"msg": "Basic Auth: Access Granted"}
+    return "Basic Auth: Access Granted"
 
 if __name__ == "__main__": 
     app.run()

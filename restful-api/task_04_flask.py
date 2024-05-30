@@ -8,7 +8,7 @@ users = {"jane": {"name": "Jane", "age": 28, "city": "Los Angeles"}}
 
 @app.route('/')
 def home():
-    return "Welcome to Flask API!"
+    return "Welcome to the Flask API!"
 
 @app.route('/data')
 def JsonData():
@@ -21,8 +21,10 @@ def ServerStatus():
 
 @app.route('/users/<username>')
 def ReturnUser(username):
-    jData = json.loads(jsonify(users).data)
-    return jData[username]
+    user = users[username]
+    if user:
+        return jsonify(user) 
+        
 
 @app.post("/add_user")
 def AddUsers():

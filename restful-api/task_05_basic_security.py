@@ -11,13 +11,14 @@ jwt = JWTManager(app)
 
 
 users = {
-    "billy": {"username": "billy", "password": generate_password_hash("billijean"), "role": "admin"}
+    "user1": {"username": "user1", "password": "<hashed_password>", "role": "user"},
+    "admin1": {"username": "admin1", "password": "<hashed_password>", "role": "admin"}
 }
 
 @auth.verify_password
 def verify_password(username, password):
     user = users.get(username)
-    if user and check_password_hash(users[username].get("password"), password):
+    if user and check_password_hash(user.get("password"), password):
         return username
 
 @app.route("/basic-protected")
@@ -36,8 +37,7 @@ def loginRoute():
 @app.get("/jwt-protected")
 @jwt_required()
 def jwtRoute():
-    curr_user = get_jwt_identity()
-    return jsonify({"logged_in": curr_user})
+    return "JWT Auth: Access Granted"
 
 
 @auth.error_handler

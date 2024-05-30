@@ -27,4 +27,5 @@ def loginRoute():
     if username in users and check_password_hash(users[username].get("password"), password):
         return users.get(username)
 
-
+if __name__ == "__main__": 
+    app.run()

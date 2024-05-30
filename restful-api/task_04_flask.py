@@ -11,8 +11,7 @@ def home():
 
 @app.route('/data')
 def JsonData():
-    all_keys = [key for key in users.keys()]
-    return jsonify(all_keys)
+    return jsonify(list(users.keys()))
 
 @app.route('/status')
 def ServerStatus():

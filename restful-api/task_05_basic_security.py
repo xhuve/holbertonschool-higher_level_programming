@@ -25,7 +25,8 @@ def loginRoute():
     username = data.get("username")
     password = data.get("password")
     if username in users and check_password_hash(users[username].get("password"), password):
-        return users.get(username)
+        access_token = create_access_token(identity=username)
+        return jsonify(access_token)
 
 if __name__ == "__main__": 
     app.run()

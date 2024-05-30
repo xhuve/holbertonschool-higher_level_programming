@@ -3,8 +3,7 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-users = {"jane": {"name": "Jane", "age": 28, "city": "Los Angeles"},
-        "john": {"name": "John", "age": 30, "city": "New York"}}
+users = {"jane": {"name": "Jane", "age": 28, "city": "Los Angeles"}}
 
 @app.route('/')
 def home():
@@ -28,7 +27,7 @@ def ReturnUser(username):
         return jsonify({"error": "User not found"}), 404
         
 
-@app.post("/add_user")
+@app.route("/add_user", methods=["POST"])
 def AddUsers():
     data = request.get_json()
     username = data.get("username")

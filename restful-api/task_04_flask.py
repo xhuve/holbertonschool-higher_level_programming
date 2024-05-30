@@ -31,8 +31,11 @@ def ReturnUser(username):
 @app.post("/add_user")
 def AddUsers():
     data = request.get_json()
-    users[data["username"]] = {key: data[key] for key in ['name', 'age', 'city']}
-    return { "message": "User added", "user": data}
+    username = data.get("username")
+    if not username:
+        return jsonify({"error": "username is required"}), 404
+    users[username] = data
+    return jsonify({ "message": "User added", "user": data}), 201
 
 if __name__ == "__main__":
     app.run()

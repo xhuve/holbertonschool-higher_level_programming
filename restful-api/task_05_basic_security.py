@@ -11,8 +11,8 @@ jwt = JWTManager(app)
 
 
 users = {
-    "user1": {"username": "user1", "password": "<hashed_password>", "role": "user"},
-    "admin1": {"username": "admin1", "password": "<hashed_password>", "role": "admin"}
+    "user1": {"username": "user1", "password": generate_password_hash("user1"), "role": "user"},
+    "admin1": {"username": "admin1", "password": generate_password_hash("admin1"), "role": "admin"}
 }
 
 @auth.verify_password
@@ -39,6 +39,14 @@ def loginRoute():
 def jwtRoute():
     return "JWT Auth: Access Granted"
 
+@app.route("/admin-only")
+@jwt_required()
+def adminRoute():
+    user = get_jwt_identity()
+    if user and users[user].get("role") == "admin":
+        return "Admin Access: Granted"
+    else:
+        return "403 Forbidden", 403
 
 @auth.error_handler
 def unauthorized():

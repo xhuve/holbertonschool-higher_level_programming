@@ -18,13 +18,12 @@ users = {
 @auth.login_required
 def basicRoute():
     print(auth.current_user())
-    return "Basic Auth: Access Granted"
+    return {"msg": "Basic Auth: Access Granted"}
 
 @auth.verify_password
 def verify_password(username, password):
     if username in users and check_password_hash(users[username].get("password"), password):
-        access_token = create_access_token(identity=username)
-        return jsonify(access_token)
+        return username
 
 if __name__ == "__main__": 
     app.run()

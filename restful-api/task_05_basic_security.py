@@ -17,13 +17,11 @@ users = {
 @app.route("/basic-protected")
 @auth.login_required
 def basicRoute():
+    print(auth.current_user())
     return "Basic Auth: Access Granted"
 
-@app.post("/login")
-def loginRoute():
-    data = request.json
-    username = data.get("username")
-    password = data.get("password")
+@auth.verify_password
+def verify_password(username, password):
     if username in users and check_password_hash(users[username].get("password"), password):
         access_token = create_access_token(identity=username)
         return jsonify(access_token)

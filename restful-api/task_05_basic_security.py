@@ -37,9 +37,8 @@ def loginRoute():
     user = users.get(username)
     if user and check_password_hash(user.get("password"), password):
         access_token = create_access_token(identity={"username": username, "role": user.get("role")})
-        return jsonify({"access_token": access_token})
-    else:
-        return jsonify({ "error": "Invalid Credentials" }), 401
+        return jsonify(access_token=access_token)
+    return jsonify({ "error": "Invalid Credentials" }), 401
 
 @app.get("/jwt-protected")
 @jwt_required()

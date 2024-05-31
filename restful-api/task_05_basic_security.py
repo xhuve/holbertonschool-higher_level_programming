@@ -19,7 +19,7 @@ users = {
 def verify_password(username, password):
     user = users.get(username)
     if user and check_password_hash(user.get("password"), password):
-        return username
+        return user
 
 @app.route("/basic-protected")
 @auth.login_required
@@ -28,11 +28,15 @@ def basicRoute():
 
 @app.post("/login")
 def loginRoute():
-    data = request.json
+    data = request.get_json()
     username = data.get("username")
     password = data.get("password")
-    if users.get(username) and check_password_hash(users[username].get("password"), password):
-        return {"access_token": create_access_token(identity=username)}
+    user = users.get(username)
+    if user and check_password_hash(user.get("password"), password):
+        access_token = create_access_token(identity={"username": username, "role": user.get("role")})
+        return jsonify({"access_token": access_token})
+    else:
+        return jsonify({ "error": "Invalid Credentials" }), 401
 
 @app.get("/jwt-protected")
 @jwt_required()

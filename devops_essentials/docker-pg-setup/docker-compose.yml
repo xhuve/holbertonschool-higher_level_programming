@@ -1,0 +1,26 @@
+
+services:
+  db:
+    image: postgres
+    environment:
+      - "POSTGRES_PASSWORD=game"
+    networks:
+      - private_network
+    ports:
+      - "5432:5432"
+  
+  admin:
+    image: dpage/pgadmin4:latest
+    environment:
+    - "PGADMIN_DEFAULT_EMAIL=billyjean@admin.org"
+    - "PGADMIN_DEFAULT_PASSWORD=BillyJeaning"
+    networks:
+      - private_network
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+
+networks:
+  private_network:
+    

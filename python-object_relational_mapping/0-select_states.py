@@ -13,3 +13,7 @@ rows = cur.fetchall()
 for row in rows:
     print(row)
     
+# Close all cursors
+cur.close()
+# Close all databases
+db.close()

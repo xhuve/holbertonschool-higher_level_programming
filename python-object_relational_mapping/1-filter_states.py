@@ -1,27 +1,21 @@
 #!/usr/bin/python3
-
 """SQL learning"""
 
 import sys
 import MySQLdb
 
-
 if __name__ == '__main__':
-    """SQL learning"""
-
+    """SQL Learning"""
 
     db = MySQLdb.connect(host='localhost', port=3306, user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
 
-    cur = db.cursor()
+    curr = db.cursor()
 
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
-
-    rows = cur.fetchall()
+    rows = curr.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id")
 
     for row in rows:
         print(row)
 
-    # Close all cursors
-    cur.close()
-    # Close all databases
+    curr.close()
     db.close()
+

@@ -13,8 +13,7 @@ if __name__ == '__main__':
 
     rows = curr.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id")
 
-    for row in range(rows):
-        print(rows[row])
+    print(rows)
 
     curr.close()
     db.close()

@@ -12,6 +12,8 @@ if __name__ == '__main__':
 
     select_query = Select(State).order_by(State.c.id)
 
+    print(select_query)
+
     with engine.connect() as conn:
-        for row in conn.execute(select_query):
+        for row in conn.execute(select_query).fetchall():
             print(row)

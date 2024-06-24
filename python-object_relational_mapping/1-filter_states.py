@@ -15,7 +15,7 @@ if __name__ == '__main__':
 
     rows = curr.fetchall()
 
-    for row in range(rows):
+    for row in range(len(rows)):
         print(rows[row])
 
     curr.close()

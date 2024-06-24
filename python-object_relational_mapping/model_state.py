@@ -1,5 +1,6 @@
 from sqlalchemy import sa, String
-from sqlalchemy.orm import Mapped, mapped_colum, declarative_base
+from sqlalchemy.orm import Mapped, mapped_colum
+from sqlalchemy.ext.declarative import declarative_base
 
 db = sa.create_engine("mysql://root:root@localhost:3306/hbtn_0e_6_usa")
 

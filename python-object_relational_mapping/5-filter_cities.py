@@ -17,8 +17,8 @@ if __name__ == '__main__':
 
     curr.execute("""SELECT cities.name FROM cities
                  INNER JOIN states ON cities.state_id = states.id
-                 ORDER BY cities.id
-                 HAVING states.name = %s""", (argv[4],))
+                 WHERE states.name = %s
+                 ORDER BY cities.id""", (argv[4],))
 
     rows = curr.fetchall()
 

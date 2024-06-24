@@ -23,8 +23,11 @@ if __name__ == '__main__':
     rows = curr.fetchall()
 
     for row in range(len(rows) - 1):
-        print(rows[row][0], end=', ')
-    print(rows[len(rows) - 1][0])
+        if row != len(rows) - 1:
+            print(rows[row][0], end=', ')
+        else:
+            print(rows[row][0])
+    
 
     curr.close()
     db.close()

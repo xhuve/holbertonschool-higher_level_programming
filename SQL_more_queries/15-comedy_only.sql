@@ -1,5 +1,4 @@
 -- show genre id
-USE hbtn_0d_tvshows;
 
 SELECT tv_shows.title AS title FROM tv_genres
 	LEFT JOIN tv_show_genres

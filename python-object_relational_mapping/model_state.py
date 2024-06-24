@@ -12,4 +12,4 @@ class State(Base):
     __tablename__ = 'states'
 
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True, unique=True)
-    name: Mapped[str] = mapped_column(String(128), nullable=False) 
+    name: Mapped[str] = mapped_column(String(128), nullable=False)

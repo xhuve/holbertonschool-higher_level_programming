@@ -2,7 +2,7 @@
 """SQL learning"""
 
 import sys
-# import MySQLdb
+import MySQLdb
 
 if __name__ == '__main__':
     """SQL Learning"""

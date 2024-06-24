@@ -29,6 +29,5 @@ if __name__ == '__main__':
             print(rows[row][0], end=', ')
     print()
 
-
     curr.close()
     db.close()

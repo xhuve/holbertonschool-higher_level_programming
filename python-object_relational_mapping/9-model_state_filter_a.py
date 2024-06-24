@@ -12,6 +12,8 @@ if __name__ == '__main__':
         )
     Base.metadata.create_all(engine)
 
+    print("works till here")
+
     with Session(engine) as session:
         query = session.query(State).order_by(State.id).filter(State.name.ilike("%n%"))
         for row in query:

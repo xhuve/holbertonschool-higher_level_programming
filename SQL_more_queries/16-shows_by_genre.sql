@@ -6,5 +6,4 @@ FROM tv_genres
 	ON tv_show_genres.genre_id = tv_genres.id
 		LEFT JOIN tv_shows
 		ON tv_shows.id = tv_show_genres.show_id
-		ORDER BY title
-		GROUP BY title;
+		ORDER BY title;

@@ -11,7 +11,9 @@ if __name__ == '__main__':
 
     curr = db.cursor()
 
-    rows = curr.execute("SELECT * FROM states WHERE name = '{}' ORDER BY id".format(sys.argv[4]))
+    curr.execute("SELECT * FROM states WHERE name = '{}' ORDER BY id".format(sys.argv[4]))
+
+    rows = curr.fetchall()
 
     for row in rows:
         print(row)

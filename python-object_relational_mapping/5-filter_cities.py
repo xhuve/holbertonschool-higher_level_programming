@@ -24,7 +24,7 @@ if __name__ == '__main__':
 
     for row in range(len(rows) - 1):
         print(rows[row][0], end=', ')
-    print(rows[len(rows) - 1])
+    print(rows[len(rows) - 1][0])
 
     curr.close()
     db.close()

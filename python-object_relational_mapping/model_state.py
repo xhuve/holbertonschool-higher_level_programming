@@ -7,9 +7,11 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
+
 class State(Base):
     """Learning SQL"""
     __tablename__ = 'states'
 
-    id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True, unique=True)
+    id: Mapped[int] = mapped_column(primary_key=True,
+                                    autoincrement=True, unique=True)
     name: Mapped[str] = mapped_column(String(128), nullable=False)

@@ -19,7 +19,7 @@ if __name__ == '__main__':
 
     for row in rows:
         print(row)
-        
+
     # Close all cursors
     cur.close()
     # Close all databases

@@ -12,7 +12,7 @@ if __name__ == '__main__':
 
     with Session(engine) as session:
         query = session.query(State).order_by(State.id).first()
-        if query == None:
+        if query is None:
             print("Nothing")
         else:
             print(f"{query.id}: {query.name}")

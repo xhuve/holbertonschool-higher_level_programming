@@ -8,7 +8,7 @@ from sqlalchemy import Select, create_engine
 
 
 if __name__ == '__main__':
-    engine = create_engine("mysql://%s:%s@localhost:3306/%s", (argv[1], argv[2], argv[3]))
+    engine = create_engine(f"mysql://{argv[1]}:{argv[2]}@localhost:3306/{argv[3]}")
 
     select_query = Select(State).order_by(State.c.id)
 

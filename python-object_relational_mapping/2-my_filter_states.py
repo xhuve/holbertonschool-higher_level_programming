@@ -15,7 +15,7 @@ if __name__ == '__main__':
 
     curr = db.cursor()
 
-    s = "SELECT * FROM states WHERE name = '{}' ORDER BY id".format(argv[4])
+    s = "SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY id".format(argv[4])
 
     curr.execute(s)
 

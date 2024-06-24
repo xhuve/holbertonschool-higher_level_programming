@@ -1,4 +1,4 @@
-from sqlalchemy import sa, String
+from sqlalchemy import String
 from sqlalchemy.orm import Mapped, mapped_colum
 from sqlalchemy.ext.declarative import declarative_base
 

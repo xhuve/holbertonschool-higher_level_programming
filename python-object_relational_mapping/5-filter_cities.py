@@ -22,7 +22,7 @@ if __name__ == '__main__':
 
     rows = curr.fetchall()
 
-    for row in range(len(rows) - 1):
+    for row in range(len(rows)):
         if row == len(rows) - 1:
             print(rows[row][0])
         else:

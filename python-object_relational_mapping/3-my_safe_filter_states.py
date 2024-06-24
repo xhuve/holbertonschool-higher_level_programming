@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """SQL learning"""
 
-import sys
+from sys import argv
 import MySQLdb
 
 if __name__ == '__main__':
@@ -9,13 +9,13 @@ if __name__ == '__main__':
 
     db = MySQLdb.connect(host='localhost',
                          port=3306,
-                         user=sys.argv[1],
-                         passwd=sys.argv[2],
-                         db=sys.argv[3])
+                         user=argv[1],
+                         passwd=argv[2],
+                         db=argv[3])
 
     curr = db.cursor()
 
-    s = "SELECT * FROM states WHERE name = '{}' ORDER BY id".format(sys.argv[4])
+    s = """SELECT * FROM states WHERE name = %s' ORDER BY id""", (argv[4], )
 
     curr.execute(s)
 

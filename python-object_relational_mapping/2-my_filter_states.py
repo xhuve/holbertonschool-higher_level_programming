@@ -2,10 +2,12 @@
 """SQL learning"""
 
 import sys
-import MySQLdb
+# import MySQLdb
 
 if __name__ == '__main__':
     """SQL Learning"""
+
+    print(sys.argv[1])
 
     db = MySQLdb.connect(host='localhost',
                          port=3306,
@@ -15,7 +17,7 @@ if __name__ == '__main__':
 
     curr = db.cursor()
 
-    s = "SELECT * FROM states WHERE name = {} ORDER BY id".format(sys.argv[4])
+    s = "SELECT * FROM states WHERE name = '{}' ORDER BY id".format(sys.argv[4])
 
     curr.execute(s)
 

@@ -11,11 +11,10 @@ if __name__ == '__main__':
 
     curr = db.cursor()
 
-    rows = curr.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id")
+    rows = curr.execute("SELECT cities.name FROM cities INNER JOIN states WHERE cities.state_id = states.id ORDER BY cities.id HAVING states.name = '{}'".format(sys.argv[4]))
 
     for row in rows:
         print(row)
 
     curr.close()
     db.close()
-

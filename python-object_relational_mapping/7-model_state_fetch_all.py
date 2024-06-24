@@ -4,13 +4,13 @@
 if __name__ == '__main__':
     from model_state import Base, State
     from sys import argv
-    from sqlalchemy import Select, create_engine
+    from sqlalchemy import create_engine
     from sqlalchemy.orm import Session
 
     engine = create_engine(f"mysql+mysqldb://{argv[1]}:{argv[2]}@localhost:3306/{argv[3]}")
     Base.metadata.create_all(engine)
 
-    session = Session()
+    with Session(engine) as session:
+        for state in session.query(State).order_by(State.id).all():
+            print(f"{state.id}: {state.name}")
 
-    for state in session.query(State).order_by(State.id).all():
-        print(f"{state.id}: {state.name}")

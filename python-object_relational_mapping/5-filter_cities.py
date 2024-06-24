@@ -24,10 +24,11 @@ if __name__ == '__main__':
 
     for row in range(len(rows)):
         if row == len(rows) - 1:
-            print(rows[row][0])
+            print(rows[row][0], end="")
         else:
             print(rows[row][0], end=', ')
-    
+    print()
+
 
     curr.close()
     db.close()

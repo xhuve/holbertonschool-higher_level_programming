@@ -17,10 +17,10 @@ def contact():
 
 @app.route('/items')
 def items():
-    with open('./templates/items.json') as f:
+    with open('./items.json') as f:
         parsed = json.load(f)
         
-    return render_template('items.html', all_items = parsed["items"])
+    return render_template('items.html', all_items=parsed.get("items", []))
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

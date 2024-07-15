@@ -20,7 +20,7 @@ def generate_invitations(template, attendees):
         personal_template = template
         for attr, value in attendee.items():
             if not isinstance(value, str):
-                value = attr + ": N/A"
+                value = "N/A"
             personal_template = personal_template.replace('{' + attr + '}', value)
         with open('output_' + str(i + 1) + ".txt", 'w', encoding="utf-8") as f:
             f.write(personal_template)

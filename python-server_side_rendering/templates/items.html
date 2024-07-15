@@ -7,14 +7,14 @@
 </head>
 <body>
     <h1>Items List</h1>
-    {% if not all_items %}
-    <p>No items found</p>
-    {% else %}
+    {% if all_items %}
         <ul>
             {% for value in all_items %}
                 <li>{{ value }}</li>
             {% endfor %}
         </ul>
+    {% else %}
+        <p>No items found</p>
     {% endif %}
 </body>
 </html>

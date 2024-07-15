@@ -6,14 +6,15 @@
     <title>Items List</title>
 </head>
 <body>
-    <ul>
-        {% if not all_items %}
-            <p>No items found</p>
-        {% else %}
+    <h1>Items List</h1>
+    {% if not all_items %}
+    <p>No items found</p>
+    {% else %}
+        <ul>
             {% for value in all_items %}
                 <li>{{ value }}</li>
             {% endfor %}
-        {% endif %}
-    </ul>
+        </ul>
+    {% endif %}
 </body>
 </html>

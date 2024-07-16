@@ -52,7 +52,7 @@ def hello():
         conn.row_factory = sqlite3.Row
         cur = conn.cursor()
         if id:
-            sqlData = cur.execute(f"SELECT * FROM Products WHERE id = {id}").fetchone()
+            sqlData = cur.execute(f"SELECT * FROM Products WHERE id = {int(id)}").fetchone()
             if not sqlData:
                 return render_template("product_display.html", error="Product not found")
             return render_template("product_display.html", allProducts=sqlData)

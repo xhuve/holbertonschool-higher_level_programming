@@ -55,7 +55,7 @@ def hello():
             sqlData = cur.execute(f"SELECT * FROM Products WHERE id = {int(id)}").fetchone()
             if not sqlData:
                 return render_template("product_display.html", error="Product not found")
-            return render_template("product_display.html", allProducts=sqlData)
+            return render_template("product_display.html", allProducts=[sqlData])
         else:
             print(cur.execute("SELECT * FROM Products").fetchall())
             return render_template("product_display.html", allProducts=cur.execute("SELECT * FROM Products").fetchall())

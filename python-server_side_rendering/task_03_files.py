@@ -11,14 +11,17 @@ def hello(source, id):
         with open("./products.json") as f:
             parsed_data = json.load(f)
             if id:
-                return render_template("product_display.html", allProducts=((value for value in parsed_data if id == value.get("id", None)), None))
+                specificData = [value for value in parsed_data if int(id) == value.get("id", None)]
+                if not specificData:
+                    return render_template("product_display.html", error="Product not found")
+                return render_template("product_display.html", allProducts=specificData)
             else:
                 return render_template("product_display.html", allProducts=parsed_data)
     elif source == "csv":
         with open("./products.csv", mode="r") as f:
             reader = csv.DictReader(f)
             if id:
-                csvData = next((value for value in reader if id == value["id"]), None)
+                csvData = [value for value in reader if id == value.get("id", None)]
                 if not csvData:
                     return render_template("product_display.html", error="Product not found")
                 return render_template("product_display.html", allProducts=csvData)
